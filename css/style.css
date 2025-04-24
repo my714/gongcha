@@ -257,10 +257,21 @@ footer .footerleft p {
   line-height: 16px;
   color: #b5b4b4;
   margin-right: 50px;
-  align-items: end;
 }
 footer .footerright {
   width: 65%;
   height: 100%;
   background: #f1f2f2;
+}
+footer .footerright ul {
+  display: flex;
+}
+
+footer .footerright .firstcall,
+footer .footerright .secondcall {
+  display: flex;
+}
+
+footer .footerright .address {
+  display: flex;
 }
