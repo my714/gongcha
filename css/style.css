@@ -128,7 +128,7 @@ body {
 .side-menu {
   position: fixed;
   top: 0;
-  right: -300px; /* 오른쪽에서 숨김 */
+  right: -300px;
   width: 250px;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -140,7 +140,7 @@ body {
 }
 
 .side-menu.open {
-  right: 0; /* 오른쪽에서 나타남 */
+  right: 0;
 }
 
 .side-menu li {
@@ -172,11 +172,11 @@ body {
 }
 
 canvas {
-  position: fixed; /* 전체 화면 배경으로 고정 */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1; /* 다른 요소 아래로 */
+  z-index: -1;
   display: block;
 }
