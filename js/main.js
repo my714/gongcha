@@ -6,7 +6,9 @@ for (let i = 0; i < 100; i++) {
   star.style.animationDuration = `${1 + Math.random() * 2}s`;
   document.body.appendChild(star);
 }
-const imageSrc = "./img/shooting-star.png"; // 별똥별 이미지 경로
+
+// 별똥별 이벤트
+const imageSrc = "./img/shooting-star.png";
 const numStars = 3; // 동시에 몇 개 만들지 설정
 
 function createShootingStar() {
@@ -14,15 +16,15 @@ function createShootingStar() {
   star.src = imageSrc;
   star.className = "shooting-star";
 
-  // 무작위 크기 (50px ~ 100px)
+  // 무작위 크기
   const size = Math.random() * 50 + 150;
   star.style.width = `${size}px`;
 
-  // 무작위 시작 높이 (10% ~ 80%)
+  // 무작위 시작 높이
   const top = Math.random() * 70 + 10;
   star.style.top = `${top}%`;
 
-  // 무작위 애니메이션 속도 (3s ~ 6s)
+  // 무작위 애니메이션 속도
   const duration = Math.random() * 3 + 3;
   star.style.animation = `shoot ${duration}s linear`;
 
@@ -42,6 +44,7 @@ setInterval(() => {
   createShootingStar();
 }, 2000); // 1초 간격으로 새 별 생성
 
+//우측 슬라이드 메뉴
 const toggle = document.querySelector(".menu-toggle");
 const sideMenu = document.querySelector(".side-menu");
 
@@ -50,13 +53,14 @@ toggle.addEventListener("click", () => {
   sideMenu.classList.toggle("open");
 });
 
+//로켓 마우스 이벤트
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const rocketImg = new Image();
-rocketImg.src = "./img/roket.png"; // 이미지 경로 (변경 필요 시 수정)
+rocketImg.src = "./img/roket.png";
 
 let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
 let rocket = {
@@ -159,6 +163,7 @@ window.addEventListener("resize", () => {
   canvas.height = window.innerHeight;
 });
 
+//서브메뉴 후버시 영어>한글로 변경
 let subMenu = document.querySelectorAll(".submenu");
 let gnb = document.querySelectorAll(".side-menu>ul>li");
 
@@ -180,3 +185,18 @@ gnb.forEach(function (item, keys) {
     this.querySelector("a .kor").style.display = "none";
   });
 });
+
+//브랜드 아이덴티티 텍스트
+
+const lines = document.querySelectorAll(".line");
+let index = 0;
+
+function showNextLine() {
+  if (index < lines.length) {
+    lines[index].classList.add("visible");
+    index++;
+    setTimeout(showNextLine, 1500);
+  }
+}
+
+setTimeout(showNextLine, 1000);
