@@ -200,3 +200,17 @@ function showNextLine() {
 }
 
 setTimeout(showNextLine, 1000);
+
+//스텔라연 텍스트
+const text = "Stellar Yeon";
+const container = document.getElementById("animated-text");
+
+setTimeout(() => {
+  text.split("").forEach((char, index) => {
+    const span = document.createElement("span");
+    span.textContent = char;
+    span.classList.add("letter");
+    span.style.animationDelay = `${index * 0.1}s`;
+    container.appendChild(span);
+  });
+}, 6500);
