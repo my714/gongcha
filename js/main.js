@@ -4,7 +4,7 @@ for (let i = 0; i < 100; i++) {
   star.style.top = `${Math.random() * 100}%`;
   star.style.left = `${Math.random() * 100}%`;
   star.style.animationDuration = `${1 + Math.random() * 2}s`;
-  document.body.appendChild(star);
+  document.getElementById("star").appendChild(star);
 }
 
 // 별똥별 이벤트
@@ -21,7 +21,7 @@ function createShootingStar() {
   star.style.width = `${size}px`;
 
   // 무작위 시작 높이
-  const top = Math.random() * 70 + 10;
+  const top = Math.random();
   star.style.top = `${top}%`;
 
   // 무작위 애니메이션 속도
@@ -31,7 +31,7 @@ function createShootingStar() {
   // 시작 위치
   star.style.right = `-150px`;
 
-  document.body.appendChild(star);
+  document.getElementById("shootingCanvas").appendChild(star);
 
   // 애니메이션 끝나면 제거
   star.addEventListener("animationend", () => {
@@ -54,7 +54,7 @@ toggle.addEventListener("click", () => {
 });
 
 //로켓 마우스 이벤트
-const canvas = document.getElementById("canvas");
+const canvas = document.getElementById("roket");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;

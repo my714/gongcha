@@ -278,12 +278,27 @@ h3 {
   height: 100%;
 }
 
-canvas {
+#star {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1;
-  display: block;
+}
+canvas#roket {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* z-index: -1; */
+}
+#shootingCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  /* z-index: -1; */
 }
